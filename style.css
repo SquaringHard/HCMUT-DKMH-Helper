@@ -1,8 +1,15 @@
-.hcmut-dkmh-helper-course-list { font-size: 14px; overflow-y: auto; }
-.hcmut-dkmh-helper-course-list div {  padding: 4px; cursor: pointer; }
-.hcmut-dkmh-helper-course-list div p { margin: 0; }
-.hcmut-dkmh-helper-course-list div:hover { background-color: rgba(0, 0, 0, 0.1); }
-.hcmut-dkmh-helper-course-list div:active { background-color: rgba(0, 0, 0, 0.2); }
+.hcmut-dkmh-helper-list { font-size: 14px; overflow-y: auto; }
+.hcmut-dkmh-helper-list div {
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hcmut-dkmh-helper-list div p { margin: 0; }
+.hcmut-dkmh-helper-list div:hover { background-color: #88888822; }
+.hcmut-dkmh-helper-list div:active { background-color: #88888844; }
+.hcmut-dkmh-helper-list div i:hover { opacity: 0.4; }
 
 .hcmut-dkmh-helper-hr {
     margin: 0 0 !important;
@@ -16,30 +23,30 @@
     margin: 5px;
 }
 
-.hcmut-dkmh-helper-timetable {
-    cursor: default;
-    border-collapse: collapse;
-    width: 100%;
-}
+/*.hcmut-dkmh-helper-timetable {*/
+/*    cursor: default;*/
+/*    border-collapse: collapse;*/
+/*    width: 100%;*/
+/*}*/
 
-.hcmut-dkmh-helper-timetable th,
-.hcmut-dkmh-helper-timetable td {
-    border: 1px solid #d2d6de !important;
-    text-align: center;
-}
+/*.hcmut-dkmh-helper-timetable th,*/
+/*.hcmut-dkmh-helper-timetable td {*/
+/*    border: 1px solid #d2d6de !important;*/
+/*    text-align: center;*/
+/*}*/
 
-.hcmut-dkmh-helper-timetable th { background-color: #f5f5f5; }
-.hcmut-dkmh-helper-timetable td:hover,
-.hcmut-dkmh-helper-timetable tr:has(th:hover),
-.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(2):hover) td:nth-child(2),
-.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(3):hover) td:nth-child(3),
-.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(4):hover) td:nth-child(4),
-.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(5):hover) td:nth-child(5),
-.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(6):hover) td:nth-child(6),
-.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(7):hover) td:nth-child(7),
-.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(8):hover) td:nth-child(8),
-.hcmut-dkmh-helper-timetable:has(tr:first-child th:first-child:hover) {
-    background-color: rgba(0, 0, 0, 0.1);
-}
+/*.hcmut-dkmh-helper-timetable th { background-color: #f5f5f5; }*/
+/*.hcmut-dkmh-helper-timetable td:hover,*/
+/*.hcmut-dkmh-helper-timetable tr:has(th:hover),*/
+/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(2):hover) td:nth-child(2),*/
+/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(3):hover) td:nth-child(3),*/
+/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(4):hover) td:nth-child(4),*/
+/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(5):hover) td:nth-child(5),*/
+/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(6):hover) td:nth-child(6),*/
+/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(7):hover) td:nth-child(7),*/
+/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(8):hover) td:nth-child(8),*/
+/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:first-child:hover) {*/
+/*    background-color: rgba(0, 0, 0, 0.1);*/
+/*}*/
 
-.hcmut-dkmh-helper-timetable td.x::before { content: "x"; }
+/*.hcmut-dkmh-helper-timetable td.x::before { content: "x"; }*/

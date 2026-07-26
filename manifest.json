@@ -1,23 +1,24 @@
 {
     "manifest_version": 3,
     "name": "HCMUT DKMH Helper",
-    "version": "1.0",
-    "description": "Cramp all your wanted courses into your preferred schedule",
+    "author": "SquaringHard",
     "homepage_url": "https://github.com/SquaringHard/HCMUT-DKMH-Helper",
     "icons": { "48": "icon-48.png" },
+    "version": "1.1",
 
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "hcmut-dkmh-helper@SquaringHard.github",
-            "data_collection_permissions": { "required": ["none"] }
-        }
-    },
+    "browser_specific_settings": { "gecko": {
+        "data_collection_permissions": { "required": ["none"] },
+        "id": "hcmut-dkmh-helper@SquaringHard.github"
+    }},
 
-    "content_scripts": [
-        {
-            "matches": ["https://mybk.hcmut.edu.vn/dkmh/dangKyMonHocForm.action"],
-            "js": ["api.js", "ui.js", "main.js"],
-            "css": ["style.css"]
-        }
-    ]
+    "content_scripts": [{
+        "matches": ["https://mybk.hcmut.edu.vn/dkmh/dangKyMonHocForm.action"],
+        "js": ["api.js", "handle.js", "util.js", "main.js"],
+        "css": ["style.css"]
+    }],
+
+    "web_accessible_resources": [{
+        "resources": ["menu.html", "popup.html"],
+        "matches": ["https://mybk.hcmut.edu.vn/*"]
+    }]
 }

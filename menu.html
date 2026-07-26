@@ -1,0 +1,64 @@
+<div class="box box-primary">
+    <div class="box-header with-border"><h3 class="box-title">HCMUT DKMH Helper Menu</h3></div>
+    <form id="hcmut-dkmh-helper-search-form"><div class="input-group input-group-sm">
+        <input class="form-control" placeholder="Mã môn học/Tên môn học (không để trống)">
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary btn-flat">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </span>
+    </div></form>
+    <div class="box-body hcmut-dkmh-helper-list" style="min-height: 10px; max-height: 130px;"></div>
+
+    <hr class="hcmut-dkmh-helper-hr">
+    <div class="box-header with-border"><h3 class="box-title">Các môn học đã chọn</h3></div>
+    <div class="box-body hcmut-dkmh-helper-list" style="max-height: 135px;" id="hcmut-dkmh-helper-selected-courses">
+        <span id="hcmut-dkmh-helper-no-selected">
+            Chưa chọn môn học nào.<br>
+            <a id="hcmut-dkmh-helper-load-registration" style="cursor:pointer;">Nhập từ Phiếu đăng ký?</a>
+        </span>
+    </div>
+
+    <hr class="hcmut-dkmh-helper-hr">
+    <div class="box-header with-border"><h3 class="box-title">Tùy chọn</h3></div>
+
+    <div class="hcmut-dkmh-helper-option">
+        <label>Cơ sở học:</label>
+        <select id="hcmut-dkmh-helper-campus">
+            <option value="">Tất cả</option>
+            <option value="1">Cơ sở 1</option>
+            <option value="2">Cơ sở 2</option>
+        </select>
+    </div>
+
+    <div class="hcmut-dkmh-helper-option">
+        <label>Nhóm lớp:</label>
+        <input type="text" placeholder="VD: CC, CN, L, ..." id="hcmut-dkmh-helper-group"/>
+    </div>
+
+<!--    <div style="margin:5px;">-->
+<!--        <label style="margin-bottom: 5px; display: block;">Giờ học:</label>-->
+<!--        <table class="hcmut-dkmh-helper-timetable"><tbody id="hcmut-dkmh-helper-timetable">-->
+<!--        <tr>-->
+<!--            <th>Tiết</th>-->
+<!--            <th>T2</th>-->
+<!--            <th>T3</th>-->
+<!--            <th>T4</th>-->
+<!--            <th>T5</th>-->
+<!--            <th>T6</th>-->
+<!--            <th>T7</th>-->
+<!--            <th>CN</th>-->
+<!--        </tr>-->
+<!--        </tbody></table>-->
+<!--    </div>-->
+
+<!--    <div style="padding:10px;">-->
+<!--        <button style="display:block; margin:auto;" id="hcmut-dkmh-helper-apply">Áp dụng</button>-->
+<!--    </div>-->
+
+<!--    <hr class="hcmut-dkmh-helper-hr">-->
+<!--    <div class="box-header with-border"><h3 class="box-title">Kết quả</h3></div>-->
+<!--    <div class="hcmut-dkmh-helper-list" id="hcmut-dkmh-helper-result">-->
+<!--        <p>Chưa tải môn học nào.</p>-->
+<!--    </div>-->
+</div>

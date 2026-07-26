@@ -1,21 +1,17 @@
-(() => {
-    console.log("HCMUT DKMH Helper loaded.");
-    const el = document.getElementById("div-DangKyMonHoc");
-    if (!el) {
-        console.error("HCMUT DKMH Helper: Element #div-DangKyMonHoc not found.");
+(async () => {
+    const div = document.getElementById("divLichDangKyResponse");
+    if (!div) {
+        console.error("[HCMUT DKMH Helper] #divLichDangKyResponse not found.")
         return;
     }
 
-    const observer = new MutationObserver(() => {
-        if (getComputedStyle(el).display === "none") return;
-        observer.disconnect();
-        console.log("HCMUT DKMH Helper started.");
-        prepareHTML();
-        prepareSearch();
-        prepareLoadRegistration();
-        prepareTimetable();
-        prepareApply();
-    });
+    if (!await insertHTML(div, "menu.html", "afterend")) return;
+    if (!await insertHTML(document.body, "popup.html", "beforeend")) return;
 
-    observer.observe(el, { attributes: true, attributeFilter: ["style"] });
+    document.getElementById("hcmut-dkmh-helper-search-form").addEventListener("submit", handleSearchFormSubmit);
+    document.getElementById("hcmut-dkmh-helper-load-registration").addEventListener("click", handleLoadRegistration);
+
+    // prepareTimetable();
+    // prepareApply();
+    console.log("[HCMUT DKMH Helper] Loaded.");
 })();
