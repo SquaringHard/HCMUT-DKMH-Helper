@@ -23,30 +23,33 @@
     margin: 5px;
 }
 
-/*.hcmut-dkmh-helper-timetable {*/
-/*    cursor: default;*/
-/*    border-collapse: collapse;*/
-/*    width: 100%;*/
-/*}*/
+.hcmut-dkmh-helper-timetable {
+    cursor: default;
+    border-collapse: collapse;
+    width: 100%;
+}
 
-/*.hcmut-dkmh-helper-timetable th,*/
-/*.hcmut-dkmh-helper-timetable td {*/
-/*    border: 1px solid #d2d6de !important;*/
-/*    text-align: center;*/
-/*}*/
+.hcmut-dkmh-helper-timetable th,
+.hcmut-dkmh-helper-timetable td {
+    border: 1px solid #d2d6de;
+    text-align: center;
+}
 
-/*.hcmut-dkmh-helper-timetable th { background-color: #f5f5f5; }*/
-/*.hcmut-dkmh-helper-timetable td:hover,*/
-/*.hcmut-dkmh-helper-timetable tr:has(th:hover),*/
-/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(2):hover) td:nth-child(2),*/
-/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(3):hover) td:nth-child(3),*/
-/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(4):hover) td:nth-child(4),*/
-/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(5):hover) td:nth-child(5),*/
-/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(6):hover) td:nth-child(6),*/
-/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(7):hover) td:nth-child(7),*/
-/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(8):hover) td:nth-child(8),*/
-/*.hcmut-dkmh-helper-timetable:has(tr:first-child th:first-child:hover) {*/
-/*    background-color: rgba(0, 0, 0, 0.1);*/
-/*}*/
+.hcmut-dkmh-helper-timetable th { background-color: #0000000f; }
+.hcmut-dkmh-helper-timetable td:hover,
+.hcmut-dkmh-helper-timetable tr:has(th:hover) td,
+.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(2):hover) td:nth-child(2),
+.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(3):hover) td:nth-child(3),
+.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(4):hover) td:nth-child(4),
+.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(5):hover) td:nth-child(5),
+.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(6):hover) td:nth-child(6),
+.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(7):hover) td:nth-child(7),
+.hcmut-dkmh-helper-timetable:has(tr:first-child th:nth-child(8):hover) td:nth-child(8),
+.hcmut-dkmh-helper-timetable:has(tr:first-child th:first-child:hover) td {
+    background-color: rgba(100, 116, 139, 0.3);
+}
 
-/*.hcmut-dkmh-helper-timetable td.x::before { content: "x"; }*/
+.hcmut-dkmh-helper-timetable td.x::before { content: "x"; }
+
+.hcmut-dkmh-helper-clickable { cursor:pointer }
+.hcmut-dkmh-helper-clickable:hover { opacity:0.4; }

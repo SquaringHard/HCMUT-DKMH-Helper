@@ -8,14 +8,16 @@
             </button>
         </span>
     </div></form>
-    <div class="box-body hcmut-dkmh-helper-list" style="min-height: 10px; max-height: 130px;"></div>
+    <div class="box-body hcmut-dkmh-helper-list" style="min-height:10px; max-height:130px;"></div>
 
     <hr class="hcmut-dkmh-helper-hr">
     <div class="box-header with-border"><h3 class="box-title">Các môn học đã chọn</h3></div>
-    <div class="box-body hcmut-dkmh-helper-list" style="max-height: 135px;" id="hcmut-dkmh-helper-selected-courses">
+    <div class="box-body hcmut-dkmh-helper-list" style="max-height:135px;" id="hcmut-dkmh-helper-selected-courses">
         <span id="hcmut-dkmh-helper-no-selected">
+            <span>
             Chưa chọn môn học nào.<br>
             <a id="hcmut-dkmh-helper-load-registration" style="cursor:pointer;">Nhập từ Phiếu đăng ký?</a>
+            </span>
         </span>
     </div>
 
@@ -36,29 +38,44 @@
         <input type="text" placeholder="VD: CC, CN, L, ..." id="hcmut-dkmh-helper-group"/>
     </div>
 
-<!--    <div style="margin:5px;">-->
-<!--        <label style="margin-bottom: 5px; display: block;">Giờ học:</label>-->
-<!--        <table class="hcmut-dkmh-helper-timetable"><tbody id="hcmut-dkmh-helper-timetable">-->
-<!--        <tr>-->
-<!--            <th>Tiết</th>-->
-<!--            <th>T2</th>-->
-<!--            <th>T3</th>-->
-<!--            <th>T4</th>-->
-<!--            <th>T5</th>-->
-<!--            <th>T6</th>-->
-<!--            <th>T7</th>-->
-<!--            <th>CN</th>-->
-<!--        </tr>-->
-<!--        </tbody></table>-->
-<!--    </div>-->
+    <div style="margin:5px;">
+        <label style="margin-bottom:5px; display:block;">Giờ học:</label>
+        <table class="hcmut-dkmh-helper-timetable"><tbody id="hcmut-dkmh-helper-timetable">
+        <tr>
+            <th>Tiết</th>
+            <th>T2</th>
+            <th>T3</th>
+            <th>T4</th>
+            <th>T5</th>
+            <th>T6</th>
+            <th>T7</th>
+            <th>CN</th>
+        </tr>
+        </tbody></table>
+    </div>
 
-<!--    <div style="padding:10px;">-->
-<!--        <button style="display:block; margin:auto;" id="hcmut-dkmh-helper-apply">Áp dụng</button>-->
-<!--    </div>-->
+    <div style="padding:10px;">
+        <button style="display:block; margin:auto;" id="hcmut-dkmh-helper-apply">Áp dụng</button>
+    </div>
 
-<!--    <hr class="hcmut-dkmh-helper-hr">-->
-<!--    <div class="box-header with-border"><h3 class="box-title">Kết quả</h3></div>-->
-<!--    <div class="hcmut-dkmh-helper-list" id="hcmut-dkmh-helper-result">-->
-<!--        <p>Chưa tải môn học nào.</p>-->
-<!--    </div>-->
+    <hr class="hcmut-dkmh-helper-hr">
+    <div class="box-header with-border"><h3 class="box-title">Kết quả</h3></div>
+    <div id="hcmut-dkmh-helper-result">
+        <p>Chưa tải môn học nào.</p>
+        <div style="display:none; flex-direction:column; align-items:center;">
+            <table class="table table-condensed table" style="width:100%; text-align:center;">
+                <thead><tr class="active" style="display:table-row;">
+                    <th style="text-align:center;">Mã môn</th>
+                    <th style="text-align:center;">Nhóm lớp</th>
+                    <th style="text-align:center;">Tình trạng</th>
+                </tr></thead>
+                <tbody></tbody>
+            </table>
+            <div style="display:inline-flex; align-items:center; justify-content:center; gap:10px; line-height:2;">
+                <i class="fa fa-caret-left hcmut-dkmh-helper-clickable" aria-hidden="true" style="font-size:24px; color:#0073b7;"></i>
+                <span>0/0</span>
+                <i class="fa fa-caret-right hcmut-dkmh-helper-clickable" aria-hidden="true" style="font-size:24px; color:#0073b7;"></i>
+            </div>
+        </div>
+    </div>
 </div>
