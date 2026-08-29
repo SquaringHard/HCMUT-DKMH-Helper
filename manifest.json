@@ -4,11 +4,11 @@
     "author": "SquaringHard",
     "homepage_url": "https://github.com/SquaringHard/HCMUT-DKMH-Helper",
     "icons": { "48": "icon-48.png" },
-    "version": "1.2",
+    "version": "1.0",
 
     "browser_specific_settings": { "gecko": {
         "data_collection_permissions": { "required": ["none"] },
-        "id": "hcmut-dkmh-helper@SquaringHard.github"
+        "id": "hcmut-dkmh-helper-rereup@SquaringHard.github"
     }},
 
     "content_scripts": [{

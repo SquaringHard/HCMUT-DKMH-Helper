@@ -8,10 +8,8 @@ async function handleSearchForm(e) {
     input.value = input.value.trim();
     if (!input.value) return;
 
-    const response = await searchMonHocDangKy(input.value);
-    if (!response.ok) { listEl.innerHTML = "<p>Lỗi server khi tìm kiếm môn học.</p>"; return; }
-
-    const text = await response.text();
+    const text = await searchMonHocDangKy(input.value);
+    if (text === undefined) { listEl.innerHTML = "<p>Lỗi server khi tìm kiếm môn học.</p>"; return; }
     if (text.includes("Chưa tìm kiếm")) { listEl.innerHTML = "<p>Không tìm thấy môn học nào.</p>"; return; }
 
     const body = new DOMParser().parseFromString(text, "text/html");
@@ -26,9 +24,8 @@ async function handleSearchForm(e) {
         info.role = "button";
         info.ariaHidden = "true";
         info.style.paddingRight = ""
-        info.addEventListener("click", async (e) => {
-            const response = await getThongTinNhomLopMonHoc(monHocId);
-            popup(await response.text());
+        info.addEventListener("click", async () => {
+            popup(await getThongTinNhomLopMonHoc(monHocId));
         });
 
         const textEl = document.createElement("div");
@@ -46,8 +43,7 @@ function addCourse(monHocText, monHocId) {
 
     const selectedEl = document.createElement("div");
     selectedEl.addEventListener("click", async () => {
-        const response = await getThongTinNhomLopMonHoc(monHocId);
-        popup(await response.text());
+        popup(await getThongTinNhomLopMonHoc(monHocId));
     });
 
     const trash = document.createElement("i");

@@ -15,10 +15,8 @@ async function loadScheduleOfSelectedCourses(warnings) {
     const notExist = [];
     const schedules = [];
     await Promise.all(Array.from(selectedCourses, async ([monHocId, monHocText]) => {
-        const response = await getThongTinNhomLopMonHoc(monHocId);
-        if (!response.ok) { serverError.push(monHocText); return; }
-
-        const text = await response.text();
+        const text = await getThongTinNhomLopMonHoc(monHocId);
+        if (text === undefined) { serverError.push(monHocText); return; }
         if (text.includes("Môn học chưa được mở nhóm lớp!")) notExist.push(monHocText);
         else schedules.push([monHocText, parseThongTinNhomLopMonHocResponse(text)]);
     }));

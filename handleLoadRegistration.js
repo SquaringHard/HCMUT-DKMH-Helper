@@ -7,10 +7,9 @@ async function handleLoadRegistration() {
     await Promise.all(Array.from(els, async el => {
         const monHocText = el.textContent.trim();
         const monHocCode = monHocText.substring(0, monHocText.indexOf(" "));
-        const response = await searchMonHocDangKy(monHocCode);
-        if (!response.ok) { serverError.push(monHocText); return; }
+        const text = await searchMonHocDangKy(monHocCode);
+        if (text === undefined) { serverError.push(monHocText); return; }
 
-        const text = await response.text();
         const monHocId = text.match(/(?<=monHoc)\d+/)?.[0];
         if (monHocId) addCourse(monHocText, monHocId);
         else notExist.push(monHocText);

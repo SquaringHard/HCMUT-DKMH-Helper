@@ -1,5 +1,5 @@
 async function searchMonHocDangKy(msmh) {
-    return await fetch("/dkmh/searchMonHocDangKy.action", {
+    return fetch2("/dkmh/searchMonHocDangKy.action", {
         method: "POST",
         headers: {"X-Requested-With": "XMLHttpRequest"},
         body: new URLSearchParams({msmh: msmh}),
@@ -8,10 +8,23 @@ async function searchMonHocDangKy(msmh) {
 }
 
 async function getThongTinNhomLopMonHoc(monHocId) {
-    return await fetch("/dkmh/getThongTinNhomLopMonHoc.action", {
+    return fetch2("/dkmh/getThongTinNhomLopMonHoc.action", {
         method: "POST",
         headers: {"X-Requested-With": "XMLHttpRequest"},
         body: new URLSearchParams({monHocId: monHocId}),
         credentials: "include"
     });
+}
+
+async function fetch2(input, init) {
+    try {
+        const response = await fetch(input, init);
+        if (response.ok) return response.text();
+
+        console.error(`HTTP ${response.status} ${response.statusText} from ${input}`);
+        return undefined;
+    } catch (e) {
+        console.error(`Error while fetching from ${input}`, e);
+        return undefined;
+    }
 }
