@@ -1,8 +1,9 @@
 function handleTimetable(e) {
-    const tbody = e.currentTarget;
     const clickedCell = e.target;
     if (clickedCell.tagName === "TD") { clickedCell.classList.toggle("x"); return; }
+    if (clickedCell.tagName !== "TH") return; // TODO: drag click feature?
 
+    const tbody = e.currentTarget;
     if (clickedCell.parentElement !== tbody.firstElementChild) {
         const row = clickedCell.parentElement;
         const allSelected = !row.querySelector("td:not(.x)");

@@ -16,6 +16,7 @@
     border-top: 1px solid #d2d6de !important;
 }
 
+.hcmut-dkmh-helper-option label { margin: 0; }
 .hcmut-dkmh-helper-option {
     display: flex;
     align-items: center;

@@ -60,17 +60,18 @@ function strToBoolArr(str) { return Array.from(str.replace(/\s+/g, ""), x => x !
 function filterSchedules(schedules, warnings) {
     const coSoSelected = document.getElementById("hcmut-dkmh-helper-campus").value;
     const nhomLopSelected = document.getElementById("hcmut-dkmh-helper-group").value.trim().toUpperCase();
+    const showFull = document.getElementById("hcmut-dkmh-show-full").checked;
     const timetable = computeTimeTable();
     const empties = [];
     const newSchedules = [];
     for (const [monHocText, nhomLopList] of schedules) {
-        const filteredNhomLopList = nhomLopList.filter(([nhomLop, /*DKSiSo*/, /*selected*/, schedules]) => {
+        const filteredNhomLopList = nhomLopList.filter(([nhomLop, DKSiSo, selected, schedules]) => {
             if (!nhomLop.includes(nhomLopSelected)) return false;
             for (const [thu, tiet, coSo, /*tuanHoc*/] of schedules) {
                 if (coSoSelected && coSo !== coSoSelected) return false;
                 if (timetable[thu - 2].some((isBlocked, index) => isBlocked && tiet[index])) return false;
             }
-            return true;
+            return showFull || selected || DKSiSo[0] < DKSiSo[1];
         });
 
         if (filteredNhomLopList.length === 0) empties.push(monHocText);
