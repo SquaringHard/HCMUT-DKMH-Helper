@@ -24,7 +24,8 @@ async function handleSearchForm(e) {
         info.role = "button";
         info.ariaHidden = "true";
         info.style.paddingRight = ""
-        info.addEventListener("click", async () => {
+        info.addEventListener("click", async (e) => {
+            e.stopPropagation();
             popup(await getThongTinNhomLopMonHoc(monHocId));
         });
 
