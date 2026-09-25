@@ -54,3 +54,22 @@
 
 .hcmut-dkmh-helper-clickable { cursor:pointer }
 .hcmut-dkmh-helper-clickable:hover { opacity:0.4; }
+
+.hcmut-dkmh-detail-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.hcmut-dkmh-detail-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.hcmut-dkmh-detail-table th,
+.hcmut-dkmh-detail-table td {
+    border: 1px solid #d2d6de !important;
+}
+
+.hcmut-dkmh-detail-table td:hover {
+    filter: brightness(0.95);
+}

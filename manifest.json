@@ -16,13 +16,13 @@
         "js": [
             "objects.js", "api.js", "popup.js",
             "handleSearchForm.js", "handleLoadRegistration.js", "handleTimetable.js", "handleApply.js",
-            "main.js"
+            "handleDisplaySchedule.js", "main.js"
         ],
         "css": ["style.css"]
     }],
 
     "web_accessible_resources": [{
-        "resources": ["menu.html", "popup.html"],
+        "resources": ["menu.html", "popup.html", "displaySchedule.html"],
         "matches": ["https://mybk.hcmut.edu.vn/*"]
     }]
 }

@@ -14,27 +14,12 @@ async function insertHTML(el, url, pos) {
     await insertHTML(div, "menu.html", "afterend");
     await insertHTML(document.body, "popup.html", "beforeend");
 
-    const timeSlots = [
-        "06:00 – 06:50",
-        "07:00 – 07:50",
-        "08:00 – 08:50",
-        "09:00 – 09:50",
-        "10:00 – 10:50",
-        "11:00 – 11:50",
-        "12:00 – 12:50",
-        "13:00 – 13:50",
-        "14:00 – 14:50",
-        "15:00 – 15:50",
-        "16:00 – 16:50",
-        "17:00 – 17:50",
-        "18:00 – 18:50",
-        "18:50 – 19:40",
-        "19:40 – 20:30",
-        "20:30 – 21:20",
-        "21:20 – 22:10"
-    ];
+    const scheduleRes = await fetch(chrome.runtime.getURL("displaySchedule.html"));
+    const scheduleHTML = await scheduleRes.text();
+    displayScheduleNode = new DOMParser().parseFromString(scheduleHTML, "text/html").body.firstElementChild;
+
     const tbody = document.getElementById("hcmut-dkmh-helper-timetable");
-    timeSlots.forEach((time, i) => {
+    TIME_SLOTS.forEach((time, i) => {
         const row = document.createElement("tr");
         row.innerHTML = `<th title="${time}">${i + 1}</th>${"<td></td>".repeat(7)}`;
         tbody.appendChild(row);
@@ -44,6 +29,7 @@ async function insertHTML(el, url, pos) {
     document.getElementById("hcmut-dkmh-helper-load-registration").addEventListener("click", handleLoadRegistration);
     tbody.addEventListener("click", handleTimetable);
     document.getElementById("hcmut-dkmh-helper-apply").addEventListener("click", handleApply);
+    document.getElementById("hcmut-dkmh-helper-detail-btn").addEventListener("click", handleDisplaySchedule);
 
     const numpageDisplay = document.querySelectorAll("#hcmut-dkmh-helper-result i");
     numpageDisplay[0].addEventListener("click", () => {
